@@ -1,15 +1,12 @@
-const pyconf = @import("pyconf");
 const std = @import("std");
 const py = @import("pydust");
 
-comptime {
-    _ = py.module("_lib", struct {
-        pub fn hello() void {
-            std.debug.print("HELLO WORLD\n", .{});
-        }
-    });
+pub fn hello() void {
+    std.debug.print("HELLO WORLD\n", .{});
+}
 
-    py.exportInitFunctions();
+comptime {
+    py.module(@This());
 }
 
 test "lib tests" {
