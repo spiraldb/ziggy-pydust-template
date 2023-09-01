@@ -12,6 +12,6 @@ comptime {
 test "lib tests" {
     py.ffi.Py_Initialize();
 
-    const pf = py.PyFloat.from(f64, 1.0);
+    const pf = try py.PyFloat.from(f64, 1.0);
     _ = pf;
 }
