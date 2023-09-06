@@ -3,7 +3,7 @@ requires = ["poetry-core", "ziggy-pydust"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "pydust-template"
+name = "ziggy-pydust-template"
 version = "0.1.0"
 description = ""
 authors = ["Nicholas Gates <nick@fulcrum.so>"]
