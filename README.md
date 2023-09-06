@@ -1,4 +1,4 @@
-# Ziggy Pydust Template Project
+# Ziggy Pydust Template
 
 This template includes:
 
@@ -7,3 +7,5 @@ This template includes:
 - Pytest setup for running both Python and Zig unit tests.
 - GitHub Actions workflows for building and publishing the package.
 - VSCode settings for recommended extensions, debugger configurations, etc.
+
+We recommend heading to [Getting Started](https://fulcrum-so.github.io/ziggy-pydust/getting_started/).
