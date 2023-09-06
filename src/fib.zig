@@ -1,7 +1,7 @@
 const std = @import("std");
 const py = @import("pydust");
 
-pub fn get_fibonacci(args: *const extern struct { n: py.PyLong }) !u64 {
+pub fn get_fibonacci(args: struct { n: py.PyLong }) !u64 {
     return f(try args.n.as(u64));
 }
 
@@ -15,8 +15,8 @@ comptime {
 
 // The rest of this file is test code.
 
-// "poetry run pytest" will run zig tests along with python tests.
-// "zig build test" still works and runs just zig tests.
+// `poetry run pytest` will run zig tests along with python tests.
+// `zig build test` still works (within `poetry shell`) and runs just zig tests.
 
 const testing = std.testing;
 
@@ -29,6 +29,6 @@ test "fibonacci test" {
 
     try testing.expectEqual(
         @as(u64, 34),
-        try get_fibonacci(&.{ .n = pl }),
+        try get_fibonacci(.{ .n = pl }),
     );
 }

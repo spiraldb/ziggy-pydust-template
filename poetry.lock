@@ -229,13 +229,13 @@ files = [
 
 [[package]]
 name = "ziggy-pydust"
-version = "0.2.3"
+version = "0.2.4"
 description = ""
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "ziggy_pydust-0.2.3-py3-none-any.whl", hash = "sha256:364abf3f21ab738938f38c49bd6ccf9fa044210aa66aa1a074722e05cbc1be9f"},
-    {file = "ziggy_pydust-0.2.3.tar.gz", hash = "sha256:066ce545118996c17dc37e47c8d73204d9690e4288b92fc75e3d3141d96fda2a"},
+    {file = "ziggy_pydust-0.2.4-py3-none-any.whl", hash = "sha256:c67ce24bd49a5ef4c5fcce1a962a157def3111613186b904b1f705891fdf110f"},
+    {file = "ziggy_pydust-0.2.4.tar.gz", hash = "sha256:16c6c89b52d3fc11c27b08590fb80f7075c671dc65fda8a99c85aaf945386f2f"},
 ]
 
 [package.dependencies]
@@ -261,4 +261,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "28d9bfa8441eb9fc42a9265eda028b1e5c9121b693f62a481b2875a21ea49891"
+content-hash = "45bf9a86923e721ef73346adfcbae509696d7aa8f988ddc751e164dcbe0c0781"
