@@ -13,10 +13,13 @@ comptime {
     py.module(@This());
 }
 
-const testing = std.testing;
+// The rest of this file is test code.
 
 // "poetry run pytest" will run zig tests along with python tests.
 // "zig build test" still works and runs just zig tests.
+
+const testing = std.testing;
+
 test "fibonacci test" {
     py.initialize();
     defer py.finalize();
