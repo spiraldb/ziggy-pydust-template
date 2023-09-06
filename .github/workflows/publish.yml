@@ -1,0 +1,53 @@
+name: Publish
+
+on:
+  push:
+    tags: ['*']
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  POETRY_VERSION: "1.6.1"
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  publish:
+    environment:
+      name: pypi
+      url: https://pypi.org/p/ziggy-pydust-template
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        id: setup-python
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Load cached Poetry installation
+        id: cached-poetry
+        uses: actions/cache@v3
+        with:
+          path: ~/.local
+          key: poetry-${{ runner.os }}-${{ env.POETRY_VERSION  }}-${{ steps.setup-python.outputs.python-version }}
+      - name: Expect Poetry cached
+        id: expect-cached-poetry
+        if: steps.cached-poetry.outputs.cache-hit != 'true'
+        run: echo "Expected cached Poetry installation, but it was not found." && exit 1
+      - name: Poetry git plugin
+        run: poetry self add poetry-git-version-plugin
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+      - name: Expect environment cached
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: echo "Expected cached environment, but it was not found." && exit 1
+
+      - name: Poetry Build
+        run: poetry build -v
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
