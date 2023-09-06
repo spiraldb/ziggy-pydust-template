@@ -19,7 +19,7 @@ python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
-ziggy-pydust = "^0.2.2"
+ziggy-pydust = "^0.2.3"
 
 [[tool.pydust.ext_module]]
 name = "fibonacci._lib"
