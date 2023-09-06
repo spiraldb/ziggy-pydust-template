@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 name = "ziggy-pydust-template"
 version = "0.1.0"
 description = ""
-authors = ["Nicholas Gates <nick@fulcrum.so>"]
+authors = ["Fulcrum Inc. <hello@fulcrum.so>"]
 readme = "README.md"
 packages = [{ include = "fibonacci" }]
 include = [{ path = "src/", format = "sdist" }]
