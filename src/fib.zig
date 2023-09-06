@@ -1,17 +1,31 @@
 const std = @import("std");
 const py = @import("pydust");
 
-pub fn hello() void {
-    std.debug.print("HELLO WORLD\n", .{});
+pub fn get_fibonacci(args: *const extern struct { n: py.PyLong }) !u64 {
+    return f(try args.n.as(u64));
+}
+
+fn f(n: u64) u64 {
+    return if (n < 2) n else f(n - 1) + f(n - 2);
 }
 
 comptime {
     py.module(@This());
 }
 
-test "lib tests" {
-    py.ffi.Py_Initialize();
+const testing = std.testing;
 
-    const pf = try py.PyFloat.from(f64, 1.0);
-    _ = pf;
+// "poetry run pytest" will run zig tests along with python tests.
+// "zig build test" still works and runs just zig tests.
+test "fibonacci test" {
+    py.initialize();
+    defer py.finalize();
+
+    const pl = try py.PyLong.from(u64, 9);
+    defer pl.decref();
+
+    try testing.expectEqual(
+        @as(u64, 34),
+        try get_fibonacci(&.{ .n = pl }),
+    );
 }

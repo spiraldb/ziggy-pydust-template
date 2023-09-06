@@ -198,13 +198,13 @@ typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
 
 [[package]]
 name = "pytest"
-version = "7.4.0"
+version = "7.4.1"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pytest-7.4.0-py3-none-any.whl", hash = "sha256:78bf16451a2eb8c7a2ea98e32dc119fd2aa758f1d5d66dbf0a59d69a3969df32"},
-    {file = "pytest-7.4.0.tar.gz", hash = "sha256:b4bf8c45bd59934ed84001ad51e11b4ee40d40a1229d2c79f9c592b0a3f6bd8a"},
+    {file = "pytest-7.4.1-py3-none-any.whl", hash = "sha256:460c9a59b14e27c602eb5ece2e47bec99dc5fc5f6513cf924a7d03a578991b1f"},
+    {file = "pytest-7.4.1.tar.gz", hash = "sha256:2f2301e797521b23e4d2585a0a3d7b5e50fdddaaf7e7d6773ea26ddb17c213ab"},
 ]
 
 [package.dependencies]
@@ -229,13 +229,13 @@ files = [
 
 [[package]]
 name = "ziggy-pydust"
-version = "0.2.1"
+version = "0.2.2"
 description = ""
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "ziggy_pydust-0.2.1-py3-none-any.whl", hash = "sha256:49dcb9c179d846645e22f5b3150e0665992449160b7b5d50dfc61e315aa754b9"},
-    {file = "ziggy_pydust-0.2.1.tar.gz", hash = "sha256:df22114c134430bcf214b23ba3440807790c86cb09c555795992121d3d98bcfd"},
+    {file = "ziggy_pydust-0.2.2-py3-none-any.whl", hash = "sha256:d30adb6f3768ed96888fd41a6a3bc05afcd8667485872e3ef990381eab9fbb06"},
+    {file = "ziggy_pydust-0.2.2.tar.gz", hash = "sha256:d87692101938fe4a01b324192869bd21d8cf5d4668d45337e023a67d61da17c1"},
 ]
 
 [package.dependencies]
@@ -261,4 +261,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "8bbc93fc358401c03f12b5cb08a475bf0aedd3e2c9201e1255bfd58aac9d764b"
+content-hash = "ad5a01f7fbcf072e886c2ce98bb8f37c38bf36d95d09e977ba072cb55da44702"

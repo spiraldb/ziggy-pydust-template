@@ -1,5 +1,4 @@
 from fibonacci import _lib
 
 def test_fibonacci():
-    _lib.hello()
-    assert False
+    assert _lib.get_fibonacci(9) == 34

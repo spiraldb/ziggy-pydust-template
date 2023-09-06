@@ -1,0 +1,16 @@
+// Run "Debug" from the "Run and Debug" in any .zig file.
+// You will need "LLDB VSCode" extension.
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug",
+            "initCommands": [
+                "shell poetry run pydust debug ${file}"
+            ],
+            "program": "zig-out/bin/debug.bin",
+        },
+    ]
+}
