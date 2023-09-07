@@ -85,8 +85,10 @@ pub const FibonacciIterator = py.class("FibonacciIterator", struct {
     }
 
     pub fn __next__(self: *Self) !?u64 {
+        // Stop iteration when we reach `self.stop`.
         if (self.i == self.stop) return null;
         defer self.i += 1;
+
         const result = self.ith;
         self.ith = self.next;
         self.next = result + self.ith;
