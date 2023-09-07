@@ -53,5 +53,9 @@ jobs:
       - name: Poetry Build
         run: poetry build -v
 
+      - name: Ruff
+        run: poetry run ruff .
+      - name: Black
+        run: poetry run black .
       - name: Pytest
         run: poetry run pytest
