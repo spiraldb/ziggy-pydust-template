@@ -15,10 +15,13 @@ def test_fubonacci_iterator():
     fibonacci = _lib.Fibonacci(10)
     expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
+    # As iterator
     fibonacci_iter = iter(fibonacci)
-    for e in expected:
-        assert next(fibonacci_iter) == e
+    for expected_item in expected:
+        actual = next(fibonacci_iter)
+        assert actual == expected_item
 
+    # As list
     fibonacci_list = fibonacci.to_list()
-    for actual, expected in zip(fibonacci_list, expected):
-        assert actual == expected
+    for actual, expected_item in zip(fibonacci_list, expected):
+        assert actual == expected_item
