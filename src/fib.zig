@@ -16,13 +16,14 @@ pub fn nth_fibonacci_iterative(args: struct { n: u64 }) u64 {
 }
 
 // A simple recursive fibonacci implementation.
-pub fn nth_fibonacci_recursive(args: struct { n: u64 }) u64 {
-    return fibonacci_recursive(args.n, 0, 1);
-}
-fn fibonacci_recursive(n: u64, f0: u64, f1: u64) u64 {
-    if (n == 0) return f0;
-    if (n == 1) return f1;
-    return fibonacci_recursive(n - 1, f1, f0 + f1);
+pub fn nth_fibonacci_recursive(args: struct { n: u64, f0: u64 = 0, f1: u64 = 1 }) u64 {
+    if (args.n == 0) return args.f0;
+    if (args.n == 1) return args.f1;
+    return nth_fibonacci_recursive(.{
+        .n = args.n - 1,
+        .f0 = args.f1,
+        .f1 = args.f0 + args.f1,
+    });
 }
 
 // Leveraging the `@call` function to generate a tail call.
