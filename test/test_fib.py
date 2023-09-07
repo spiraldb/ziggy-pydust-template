@@ -1,4 +1,24 @@
 from fibonacci import _lib
 
+
 def test_fibonacci():
-    assert _lib.get_fibonacci(9) == 34
+    impls = [
+        _lib.nth_fibonacci_iterative,
+        _lib.nth_fibonacci_recursive,
+        _lib.nth_fibonacci_recursive_tail,
+    ]
+    for impl in impls:
+        assert impl(9) == 34
+
+
+def test_fubonacci_iterator():
+    fibonacci = _lib.Fibonacci(10)
+    expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+    fibonacci_iter = iter(fibonacci)
+    for e in expected:
+        assert next(fibonacci_iter) == e
+
+    fibonacci_list = fibonacci.to_list()
+    for actual, expected in zip(fibonacci_list, expected):
+        assert actual == expected
