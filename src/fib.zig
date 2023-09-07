@@ -26,7 +26,7 @@ pub fn nth_fibonacci_recursive(args: struct { n: u64, f0: u64 = 0, f1: u64 = 1 }
     });
 }
 
-// Leveraging the `@call` function to generate a tail call.
+// Leveraging the `@call` function to enforce a tail call.
 pub fn nth_fibonacci_recursive_tail(args: struct { n: u64 }) u64 {
     return fibonacci_recursive_tail(args.n, 0, 1);
 }
@@ -51,22 +51,6 @@ pub const Fibonacci = py.class("Fibonacci", struct {
     // Get an iterator over the first `self.first_n` Fibonacci numbers.
     pub fn __iter__(self: *const Self) !*FibonacciIterator {
         return try py.init(FibonacciIterator, .{ .i = 0, .ith = 0, .next = 1, .stop = self.first_n });
-    }
-
-    // Get the first `self.first_n` Fibonacci numbers as a list.
-    pub fn to_list(self: *const Self) !py.PyList {
-        var result = try py.PyList.new(self.first_n);
-
-        if (self.first_n == 0) return result;
-        try result.setItem(0, 0);
-        if (self.first_n == 1) return result;
-        try result.setItem(1, 1);
-
-        for (2..self.first_n) |i| {
-            const next = try result.getItem(u64, @intCast(i - 1)) + try result.getItem(u64, @intCast(i - 2));
-            try result.setItem(@intCast(i), next);
-        }
-        return result;
     }
 });
 

@@ -22,6 +22,6 @@ def test_fubonacci_iterator():
         assert actual == expected_item
 
     # As list
-    fibonacci_list = fibonacci.to_list()
+    fibonacci_list = list(fibonacci)
     for actual, expected_item in zip(fibonacci_list, expected):
         assert actual == expected_item
