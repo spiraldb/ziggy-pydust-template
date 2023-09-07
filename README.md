@@ -1,5 +1,7 @@
 # Ziggy Pydust Template
 
+This repository contains a template for writing and packaging native Python extension modules in Zig using [Pydust](https://github.com/fulcrum-so/ziggy-pydust) framework.
+
 This template includes:
 
 - A Python Poetry project.
@@ -8,4 +10,4 @@ This template includes:
 - GitHub Actions workflows for building and publishing the package.
 - VSCode settings for recommended extensions, debugger configurations, etc.
 
-We recommend heading to [Getting Started](https://fulcrum-so.github.io/ziggy-pydust/getting_started/).
+We recommend heading to [Getting Started](https://pydust.fulcrum.so/getting_started/).
