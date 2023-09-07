@@ -20,6 +20,15 @@ python = "^3.11"
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
 ziggy-pydust = "^0.2.5"
+ruff = "^0.0.286"
+black = "^23.7.0"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+select = ["F", "E", "W", "UP", "I001", "I002"]
 
 [[tool.pydust.ext_module]]
 name = "fibonacci._lib"
