@@ -10,4 +10,4 @@ This template includes:
 - GitHub Actions workflows for building and publishing the package.
 - VSCode settings for recommended extensions, debugger configurations, etc.
 
-We recommend heading to [Getting Started](https://pydust.fulcrum.so/getting_started/).
+We recommend heading to [Getting Started](https://pydust.fulcrum.so/latest/getting_started/).
