@@ -9,7 +9,10 @@ description = ""
 authors = ["Fulcrum Inc. <hello@fulcrum.so>"]
 readme = "README.md"
 packages = [{ include = "fibonacci" }]
-include = [{ path = "src/", format = "sdist" }]
+include = [
+    { path = "src/", format = "sdist" },
+    { path = "fibonacci/*.so", format = "wheel" },
+]
 
 [tool.poetry.build]
 script = "build.py"
