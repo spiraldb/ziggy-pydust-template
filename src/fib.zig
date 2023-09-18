@@ -37,7 +37,7 @@ fn fibonacci_recursive_tail(n: u64, f0: u64, f1: u64) u64 {
 }
 
 // Exposing it through a Python class.
-pub const Fibonacci = py.class("Fibonacci", struct {
+pub const Fibonacci = py.class(struct {
     pub const __doc__ = "A class that computes the Fibonacci numbers.";
 
     const Self = @This();
@@ -54,7 +54,7 @@ pub const Fibonacci = py.class("Fibonacci", struct {
     }
 });
 
-pub const FibonacciIterator = py.class("FibonacciIterator", struct {
+pub const FibonacciIterator = py.class(struct {
     pub const __doc__ = "An iterator that computes the Fibonacci numbers.";
 
     const Self = @This();
@@ -81,7 +81,7 @@ pub const FibonacciIterator = py.class("FibonacciIterator", struct {
 });
 
 comptime {
-    py.module(@This());
+    py.rootmodule(@This());
 }
 
 // The rest of this file is test code.

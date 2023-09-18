@@ -1,5 +1,5 @@
 [build-system]
-requires = ["poetry-core", "ziggy-pydust==0.5.*"]
+requires = ["poetry-core", "ziggy-pydust==0.6.*"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
