@@ -23,7 +23,7 @@ python = "^3.11"
 [tool.poetry.group.dev.dependencies]
 ziggy-pydust = "0.7.*"
 pytest = "^7.4.0"
-ruff = "^0.0.290"
+ruff = "^0.0.291"
 black = "^23.7.0"
 
 [tool.black]
