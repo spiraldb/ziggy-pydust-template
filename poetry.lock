@@ -338,6 +338,22 @@ files = [
 ]
 
 [[package]]
+name = "setuptools"
+version = "68.2.2"
+description = "Easily download, build, install, upgrade, and uninstall Python packages"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "setuptools-68.2.2-py3-none-any.whl", hash = "sha256:b454a35605876da60632df1a60f736524eb73cc47bbc9f3f1ef1b644de74fd2a"},
+    {file = "setuptools-68.2.2.tar.gz", hash = "sha256:4ac1475276d2f1c48684874089fefcd83bd7162ddaafb81fac866ba0db282a87"},
+]
+
+[package.extras]
+docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "pygments-github-lexers (==0.0.5)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-favicon", "sphinx-hoverxref (<2)", "sphinx-inline-tabs", "sphinx-lint", "sphinx-notfound-page (>=1,<2)", "sphinx-reredirects", "sphinxcontrib-towncrier"]
+testing = ["build[virtualenv]", "filelock (>=3.4.0)", "flake8-2020", "ini2toml[lite] (>=0.9)", "jaraco.develop (>=7.21)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "pip (>=19.1)", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy (>=0.9.1)", "pytest-perf", "pytest-ruff", "pytest-timeout", "pytest-xdist", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel"]
+testing-integration = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "packaging (>=23.1)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
+
+[[package]]
 name = "typing-extensions"
 version = "4.8.0"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -350,17 +366,18 @@ files = [
 
 [[package]]
 name = "ziggy-pydust"
-version = "0.7.0"
+version = "0.8.1"
 description = ""
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "ziggy_pydust-0.7.0-py3-none-any.whl", hash = "sha256:cd340b55a2d449a639861cf1b273fee0729c8e5e321b1eb5d8e6e8a1ca8af9de"},
-    {file = "ziggy_pydust-0.7.0.tar.gz", hash = "sha256:9fd479bdcd525ff9f745f8260b486ac3256cb0f04fb5c0e5cddd3c4528229d9b"},
+    {file = "ziggy_pydust-0.8.1-py3-none-any.whl", hash = "sha256:e866044352f56660c43238047b56c4bb09989de48ea91cd280ab3a2b5022a304"},
+    {file = "ziggy_pydust-0.8.1.tar.gz", hash = "sha256:270993918a7067d07f70685cf1437853c511201eb2662ba8b9273eacead3b731"},
 ]
 
 [package.dependencies]
 pydantic = ">=2.3.0,<3.0.0"
+setuptools = ">=68.2.2,<69.0.0"
 ziglang = ">=0.11.0,<0.12.0"
 
 [[package]]
@@ -382,4 +399,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "6a7925e18df442210e3b1823b81a3c6844ccd8e931f1bc53e717d27775dbbc96"
+content-hash = "a5b4527aa5cc8ba205dc53a7308ab61a6dd8168c987100ee924955f91f235865"
