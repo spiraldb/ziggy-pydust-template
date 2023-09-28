@@ -12,6 +12,7 @@ packages = [{ include = "fibonacci" }]
 include = [
     { path = "src/", format = "sdist" },
     { path = "fibonacci/*.so", format = "wheel" },
+    "fibonacci/*.pyi"
 ]
 
 [tool.poetry.build]

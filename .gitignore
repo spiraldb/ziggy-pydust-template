@@ -163,3 +163,4 @@ zig-out/
 
 pydust.build.zig
 build.zig
+*.pyi
