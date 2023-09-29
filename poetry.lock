@@ -156,13 +156,13 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "pydantic"
-version = "2.4.1"
+version = "2.4.2"
 description = "Data validation using Python type hints"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pydantic-2.4.1-py3-none-any.whl", hash = "sha256:2b2240c8d54bb8f84b88e061fac1bdfa1761c2859c367f9d3afe0ec2966deddc"},
-    {file = "pydantic-2.4.1.tar.gz", hash = "sha256:b172505886028e4356868d617d2d1a776d7af1625d1313450fd51bdd19d9d61f"},
+    {file = "pydantic-2.4.2-py3-none-any.whl", hash = "sha256:bc3ddf669d234f4220e6e1c4d96b061abe0998185a8d7855c0126782b7abc8c1"},
+    {file = "pydantic-2.4.2.tar.gz", hash = "sha256:94f336138093a5d7f426aac732dcfe7ab4eb4da243c88f891d65deb4a2556ee7"},
 ]
 
 [package.dependencies]
@@ -366,16 +366,17 @@ files = [
 
 [[package]]
 name = "ziggy-pydust"
-version = "0.10.0"
+version = "0.11.1"
 description = ""
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "ziggy_pydust-0.10.0-py3-none-any.whl", hash = "sha256:db18c6c245fd22860f0566c16c9b5484f2b97fc206afeb49b24391c96bcd2fc8"},
-    {file = "ziggy_pydust-0.10.0.tar.gz", hash = "sha256:03440ca7ad01dcbffb6cec41247d95057974fc49eb42ded504e2c7b6fe447578"},
+    {file = "ziggy_pydust-0.11.1-py3-none-any.whl", hash = "sha256:5796a69b2ca71b6356c2a2676236ad15facaacf34e1f35de11e19e3e3ff2ad56"},
+    {file = "ziggy_pydust-0.11.1.tar.gz", hash = "sha256:90e7777c8f81c23b3d3c15ff799d5bce9405b45805812079cfb6a473d0f707d6"},
 ]
 
 [package.dependencies]
+black = ">=23.9.1,<24.0.0"
 pydantic = ">=2.3.0,<3.0.0"
 setuptools = ">=68.2.2,<69.0.0"
 ziglang = ">=0.11.0,<0.12.0"
@@ -399,4 +400,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "2f43addc4868590d7f67765ea98873abde9c18eb7700bcc385c670b882c4fa78"
+content-hash = "93eef528a60803d838d2969beada5872a5352d4a8651583566b3eb4361dbfd00"
