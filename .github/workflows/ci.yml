@@ -59,3 +59,5 @@ jobs:
         run: poetry run black .
       - name: Pytest
         run: poetry run pytest
+      - name: Check stubs
+        run: poetry run python -m ziglang build generate-stubs -Dcheck-stubs=true
