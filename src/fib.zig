@@ -44,7 +44,7 @@ pub const Fibonacci = py.class(struct {
 
     first_n: u64,
 
-    pub fn __init__(self: *Self, args: struct { first_n: u64 }) !void {
+    pub fn __init__(self: *Self, args: struct { first_n: u64 }) void {
         self.first_n = args.first_n;
     }
 
@@ -64,7 +64,7 @@ pub const FibonacciIterator = py.class(struct {
     next: u64,
     stop: u64,
 
-    pub fn __init__(self: *Self, args: struct { i: u64, ith: u64, next: u64, stop: u64 }) !void {
+    pub fn __init__(self: *Self, args: struct { i: u64, ith: u64, next: u64, stop: u64 }) void {
         self.i = args.i;
         self.ith = args.ith;
         self.next = args.next;
