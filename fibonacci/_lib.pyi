@@ -9,7 +9,7 @@ class Fibonacci:
     A class that computes the Fibonacci numbers.
     """
 
-    def __init__(first_n, /):
+    def __init__(self, first_n, /):
         pass
     def __iter__(self, /):
         """
@@ -22,7 +22,7 @@ class FibonacciIterator:
     An iterator that computes the Fibonacci numbers.
     """
 
-    def __init__(i, ith, next, stop, /):
+    def __init__(self, i, ith, next, stop, /):
         pass
     def __next__(self, /):
         """
