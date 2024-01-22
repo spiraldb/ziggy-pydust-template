@@ -163,3 +163,5 @@ zig-out/
 
 pydust.build.zig
 build.zig
+.idea
+.python-version
