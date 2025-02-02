@@ -1,31 +1,36 @@
 [build-system]
-requires = ["poetry-core", "ziggy-pydust==0.23.2"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry]
+[project]
 name = "ziggy-pydust-template"
 version = "0.1.0"
 description = ""
-authors = ["Fulcrum Inc. <hello@fulcrum.so>"]
+authors = [{ name = "Fulcrum Inc.", email = "hello@fulcrum.so" }]
+requires-python = "~=3.11"
 readme = "README.md"
-packages = [{ include = "fibonacci" }]
-include = [
-    { path = "src/", format = "sdist" },
-    { path = "fibonacci/*.so", format = "wheel" },
-    "fibonacci/*.pyi"
+
+[dependency-groups]
+dev = [
+    "ziggy-pydust==0.23.2",
+    "pytest>=8.0.0,<9",
+    "ruff>=0.4.0,<0.5",
+    "black>=23.7.0,<24",
 ]
 
-[tool.poetry.build]
-script = "build.py"
+[tool.hatch.build.targets.sdist]
+include = [
+    "fibonacci",
+    "src/",
+    "fibonacci/*.pyi",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-
-[tool.poetry.group.dev.dependencies]
-ziggy-pydust = "0.23.2"
-pytest = "^8.0.0"
-ruff = "^0.4.0"
-black = "^23.7.0"
+[tool.hatch.build.targets.wheel]
+include = [
+    "fibonacci",
+    "fibonacci/*.so",
+    "fibonacci/*.pyi",
+]
 
 [tool.black]
 line-length = 120

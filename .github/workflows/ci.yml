@@ -10,54 +10,32 @@ permissions:
   actions: read
   contents: read
 
-env:
-  POETRY_VERSION: "1.6.1"
-  PYTHON_VERSION: "3.11"
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        id: setup-python
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
 
-      - name: Load cached Poetry installation
-        id: cached-poetry
-        uses: actions/cache@v4
-        with:
-          path: ~/.local
-          key: poetry-${{ runner.os }}-${{ env.POETRY_VERSION  }}-${{ steps.setup-python.outputs.python-version }}
-      - name: Install Poetry
-        id: install-poetry
-        if: steps.cached-poetry.outputs.cache-hit != 'true'
-        uses: snok/install-poetry@v1
-        with:
-          version: ${{ env.POETRY_VERSION }}
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
-      - name: Poetry git plugin
-        run: poetry self add poetry-git-version-plugin
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v4
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+      - name: 📦 Install uv
+        uses: astral-sh/setup-uv@v4
 
-      - name: Poetry Install
-        run: poetry install -n -v
-      - name: Poetry Build
-        run: poetry build -v
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
 
-      - name: Ruff
-        run: poetry run ruff .
-      - name: Black
-        run: poetry run black .
-      - name: Pytest
-        run: poetry run pytest
-      - name: Check stubs
-        run: poetry run python -m ziglang build generate-stubs -Dcheck-stubs=true
+      - name: 🦾 Install dependencies
+        run: uv sync --all-extras --dev
+
+      - name: 🔍 Lint with Ruff
+        run: uv run ruff check .
+
+      - name: 🖌️ Format with Black
+        run: uv run black .
+
+      - name: 🧪 Run tests
+        run: uv run pytest
+
+      - name: 🔎 Check stubs
+        run: uv run python -m ziglang build generate-stubs -Dcheck-stubs=true
