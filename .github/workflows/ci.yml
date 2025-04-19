@@ -32,7 +32,7 @@ jobs:
         run: uv run ruff check .
 
       - name: 🖌️ Format with Black
-        run: uv run black .
+        run: uv run black --check .
 
       - name: 🧪 Run tests
         run: uv run pytest
