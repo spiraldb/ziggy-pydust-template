@@ -38,4 +38,4 @@ jobs:
         run: uv run pytest
 
       - name: 🔎 Check stubs
-        run: uv run python -m ziglang build generate-stubs -Dcheck-stubs=true
+        run: uv run -m ziglang build generate-stubs -Dcheck-stubs=true
