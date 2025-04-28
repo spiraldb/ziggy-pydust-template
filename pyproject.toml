@@ -20,9 +20,8 @@ dev = [
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "fibonacci",
+    "fibonacci/",
     "src/",
-    "fibonacci/*.pyi",
 ]
 
 [tool.hatch.build.targets.wheel]
