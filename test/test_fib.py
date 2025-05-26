@@ -11,7 +11,7 @@ def test_fibonacci():
         assert impl(9) == 34
 
 
-def test_fubonacci_iterator():
+def test_fibonacci_iterator():
     fibonacci = _lib.Fibonacci(10)
     expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
