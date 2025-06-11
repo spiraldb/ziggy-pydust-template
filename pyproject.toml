@@ -24,14 +24,12 @@ python = "^3.11"
 [tool.poetry.group.dev.dependencies]
 ziggy-pydust = "0.25.1"
 pytest = "^8.0.0"
-ruff = "^0.4.0"
-black = "^23.7.0"
-
-[tool.black]
-line-length = 120
+ruff = "^0.11.0"
 
 [tool.ruff]
 line-length = 120
+
+[tool.ruff.lint]
 select = ["F", "E", "W", "UP", "I001", "I002"]
 
 [[tool.pydust.ext_module]]
