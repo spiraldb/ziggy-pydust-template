@@ -1,6 +1,8 @@
 const std = @import("std");
 const py = @import("pydust");
 
+const root = @This();
+
 // A simple fibonacci implementation.
 pub fn nth_fibonacci_iterative(args: struct { n: u64 }) u64 {
     if (args.n < 2) return args.n;
@@ -49,8 +51,8 @@ pub const Fibonacci = py.class(struct {
     }
 
     // Get an iterator over the first `self.first_n` Fibonacci numbers.
-    pub fn __iter__(self: *const Self) !*FibonacciIterator {
-        return try py.init(FibonacciIterator, .{ .i = 0, .ith = 0, .next = 1, .stop = self.first_n });
+    pub fn __iter__(self: *const Self) !*FibonacciIterator.definition {
+        return try py.init(root, FibonacciIterator.definition, .{ .i = 0, .ith = 0, .next = 1, .stop = self.first_n });
     }
 });
 
@@ -84,7 +86,7 @@ pub const FibonacciIterator = py.class(struct {
 });
 
 comptime {
-    py.rootmodule(@This());
+    py.rootmodule(root);
 }
 
 // The rest of this file is test code.
