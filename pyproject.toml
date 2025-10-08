@@ -22,7 +22,7 @@ script = "build.py"
 python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
-ziggy-pydust = "0.25.1"
+ziggy-pydust = "0.26.0"
 pytest = "^8.0.0"
 ruff = "^0.14.0"
 
